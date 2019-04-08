@@ -7,7 +7,15 @@
 
 <body>
   <% include ../partials/nav %>
-<h1>test</h1>
+<h1>drag and drop</h1>
+<div class="dropzone">
+  <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+    This div is draggable
+  </div>
+</div>
+<div class="dropzone"></div>
+<div class="dropzone"></div>
+<div class="dropzone"></div>
   <% include ../partials/footer %>
 </body>
 
