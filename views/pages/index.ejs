@@ -7,16 +7,37 @@
 
 <body>
   <% include ../partials/nav %>
-<h1>drag and drop</h1>
-<div class="dropzone">
-  <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
-    This div is draggable
-  </div>
-</div>
-<div class="dropzone"></div>
-<div class="dropzone"></div>
-<div class="dropzone"></div>
+  <ul>
+    <li aria-grabbed="false" aria-dropeffect="move" class="l5"><a tabindex="0" class="drag-handle" href="#"
+        aria-label="drag Entry E row"> Letter E</i></a> </li>
+    <li aria-grabbed="false" aria-dropeffect="move" class="l2"><a tabindex="0" class="drag-handle" href="#"
+        aria-label="drag Entry B row"> Letter B</i></a> </li>
+    <li aria-grabbed="false" aria-dropeffect="move" class="l6"><a tabindex="0" class="drag-handle" href="#"
+        aria-label="drag Entry F row"> Letter F</i></a> </li>
+    <li aria-grabbed="false" aria-dropeffect="move" class="l3"><a tabindex="0" class="drag-handle" href="#"
+        aria-label="drag Entry C row"> Letter C</i></a> </li>
+    <li aria-grabbed="false" aria-dropeffect="move" class="l1"><a tabindex="0" class="drag-handle" href="#"
+        aria-label="drag Entry A row"> Letter A</i></a></li>
+    <li aria-grabbed="false" aria-dropeffect="move" class="l4"><a tabindex="0" class="drag-handle" href="#"
+        aria-label="drag Entry D row"> Letter D</i></a> </li>
+    <li aria-grabbed="false" aria-dropeffect="move" class="l7"><a tabindex="0" class="drag-handle" href="#"
+        aria-label="drag Entry G row"> Letter G</i></a> </li>
+  </ul>
+
+  <section>
+    <h2>Taak: Sorteer de letters op volgorde</h2>
+    <h3>Controls:</h3>
+    <p>Rij omlaag = TAB</p>
+    <p>Rij omhoog = Shift TAB</p>
+    <p>Vastpakken = SPATIE</p>
+    <p>Loslaten = SPATIE, ESC, ENTER</p>
+    <p>Omhoog verplaatsen = <br>willekeurig character aan de bovenkant van keyboard</p>
+    <p>Omlaag verplaatsen = <br>willekeurig character aan de onderkant van keyboard</p>
+
+  </section>
+
   <% include ../partials/footer %>
 </body>
+
 
 </html>

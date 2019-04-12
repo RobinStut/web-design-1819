@@ -1,19 +1,90 @@
-body {
-  margin: 0;
-  background-color: #fff;
+ul {
+  margin: 40px 40px;
+  padding: 0;
+  list-style-type: none;
+  width: 50%;
 }
-
-#draggable {
-  width: 200px;
-  height: 20px;
+li {
+  padding: 10px 15px;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  height:     3.7rem;
   text-align: center;
-  background: white;
+}
+a {
+  color: #555;
+  text-decoration: none;
+  font-size: 60px;
+    line-height: 3.7rem;
+    font-family:monospace;
+}
+a:focus {
+  border: blue;
 }
 
-.dropzone {
-  width: 200px;
-  height: 20px;
-  background: blueviolet;
-  margin-bottom: 10px;
-  padding: 10px;
+a i::before {
+  font-style: normal;
+  font-family: fontawesome;
+  font-weight: normal;
+  content: "\f00a";
+}
+
+.l1{
+  background: #9400D3	;
+}
+
+.l2{
+  background: #4B0082	;
+}
+
+.l3{
+  background: #0000FF	;
+}
+
+.l4{
+  background: #00FF00	;
+}
+
+.l5{
+  background: #FFFF00	;
+}
+
+.l6{
+  background: #FF7F00	;
+}
+
+.l7{
+  background: #FF0000	;
+}
+
+.l1 a{
+  color:white;
+}
+
+.l2 a{
+  color:white;
+}
+
+.l3 a{
+  color:white;
+}
+
+.l7 a{
+  color:white;
+}
+
+body{
+  margin: 0;
+  display: flex;
+}
+
+section{
+  margin: 40px 40px;
+  font-family: sans-serif;
+}
+
+section p {
+
+  margin:3rem 0;
 }
