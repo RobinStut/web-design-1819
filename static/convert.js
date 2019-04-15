@@ -18,7 +18,8 @@
       spaceCount = 1;
       console.log(spaceCount);
       rows.attr("aria-grabbed", false);
-      return $row.attr('aria-grabbed', true);
+      // rows.addClass("true")
+      return $row.attr('aria-grabbed', true).addClass('true');
     }
 
     if (up.includes(event.which)) {
@@ -42,6 +43,7 @@
     }
     if (event.which === 13 || event.which === 27 || (event.which === 32 && spaceCount === 1)) {
       spaceCount = 0;
+      rows.removeClass("true")
       return rows.attr("aria-grabbed", false);
     }
   });
