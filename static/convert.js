@@ -100,8 +100,9 @@ content.onkeydown = function (event) {
       console.log('is false');
       document.getElementById(id).blur()
       var split = id.replace(rx, (...arg) => {
-        var idPlus = Number(arg[4]) - 1;
-        return `${arg[1] + arg[2] + '_' + arg[3] + '-' + idPlus}`
+        console.log(arg);
+        var idPlus = Number(arg[3]) - 1;
+        return `${arg[1] + arg[2] + '_' + idPlus + '-' + arg[4]}`
       });
       try {
         document.getElementById(split).focus();
@@ -130,9 +131,10 @@ content.onkeydown = function (event) {
       console.log('is false');
       document.getElementById(id).blur()
       var split = id.replace(rx, (...arg) => {
-        var idPlus = Number(arg[4]) + 1;
-        return `${arg[1] + arg[2] + '_' + arg[3] + '-' + idPlus}`
+        var idPlus = Number(arg[3]) + 1;
+        return `${arg[1] + arg[2] + '_' + idPlus + '-' + arg[4]}`
       });
+      console.log(split);
     }
     try {
       document.getElementById(split).focus();
