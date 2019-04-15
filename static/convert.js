@@ -1,51 +1,81 @@
+//parent
+var content = document.getElementById('content');
+
+content.onkeydown = function (event) {
+  // log aantal cellen in parent
+  var numberOfCells = content.getElementsByTagName("td").length;
 
 
-(function ($) {
-  const up = [192, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 189, 187, 8, 81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 219, 221, 38];
-  const down = [20, 65, 83, 68, 70, 71, 72, 74, 75, 76, 186, 222, 220, 16, 192, 90, 88, 67, 86, 66, 78, 77, 188, 190, 191, 16, 17, 18, 91, 93, 18, 40];
+  if (event.keyCode == 37) {
+    console.log('left');
+    // removed de focus van huidige focus element
+    document.getElementById(event.target.id).blur()
 
-  let spaceCount = 0;
+    // haalt id op van huidige focus en split deze in losse letters
+    var currentfocus = event.target.id.split('');
 
+    // zorgt ervoor dat element 1 terugtelt 
+    currentfocus.splice(currentfocus.length - 1, 1, +currentfocus[currentfocus.length - 1] - 1);
 
-  const grabHandle = $("a");
-  const rows = $("li[aria-grabbed]");
+    // maakt hier het id aan van toekomstig nieuwe focus element
+    var newfocus = currentfocus.join('');
 
-  return grabHandle.on("keyup", function (event) {
-    const $this = $(this);
-    const $row = $this.parent();
+    // voegt de focus toe aan nieuwe element
+    document.getElementById(newfocus).focus()
+  }
 
-    if (event.which === 32 && spaceCount === 0) {
-      spaceCount = 1;
-      console.log(spaceCount);
-      rows.attr("aria-grabbed", false);
-      // rows.addClass("true")
-      return $row.attr('aria-grabbed', true).addClass('true');
-    }
+  ////////////
+  else if (event.keyCode == 39) {
+    console.log('right');
+    // removed de focus van huidige focus element
+    document.getElementById(event.target.id).blur()
 
-    if (up.includes(event.which)) {
-      if ($row.attr('aria-grabbed') === "true") {
-        const prev = $row.prev();
-        if (prev) {
-          $row.insertBefore(prev);
-        }
-        return $this.focus();
-      }
-    }
+    // haalt id op van huidige focus en split deze in losse letters
+    var currentfocus = event.target.id.split('');
 
-    if (down.includes(event.which)) {
-      if ($row.attr('aria-grabbed') === "true") {
-        const next = $row.next();
-        if (next) {
-          $row.insertAfter(next);
-        }
-        return $this.focus();
-      }
-    }
-    if (event.which === 13 || event.which === 27 || (event.which === 32 && spaceCount === 1)) {
-      spaceCount = 0;
-      rows.removeClass("true")
-      return rows.attr("aria-grabbed", false);
-    }
-  });
+    // zorgt ervoor dat element 1 bijtelt 
+    currentfocus.splice(currentfocus.length - 1, 1, +currentfocus[currentfocus.length - 1] + 1);
 
-})(jQuery);
+    // maakt hier het id aan van toekomstig nieuwe focus element
+    var newfocus = currentfocus.join('');
+
+    // voegt de focus toe aan nieuwe element
+    document.getElementById(newfocus).focus()
+  }
+  ////////////
+
+  else if (event.keyCode == 38) {
+    console.log('up');
+    // removed de focus van huidige focus element
+    document.getElementById(event.target.id).blur()
+
+    // haalt id op van huidige focus en split deze in losse letters
+    var currentfocus = event.target.id.split('');
+
+    // zorgt ervoor dat de row geteld wordt -1 voor de toekomstige row
+    currentfocus.splice(2, 1, +currentfocus[2] - 1);
+
+    // maakt hier het id aan van toekomstig nieuwe focus element
+    var newfocus = currentfocus.join('');
+
+    // voegt de focus toe aan nieuwe element
+    document.getElementById(newfocus).focus();
+  }
+  else if (event.keyCode == 40) {
+    console.log('down');
+    // removed de focus van huidige focus element
+    document.getElementById(event.target.id).blur()
+
+    // haalt id op van huidige focus en split deze in losse letters
+    var currentfocus = event.target.id.split('');
+
+    // zorgt ervoor dat de row geteld wordt +1 voor de toekomstige row
+    currentfocus.splice(2, 1, +currentfocus[2] + 1);
+
+    // maakt hier het id aan van toekomstig nieuwe focus element
+    var newfocus = currentfocus.join('');
+
+    // voegt de focus toe aan nieuwe element
+    document.getElementById(newfocus).focus();
+  }
+};
