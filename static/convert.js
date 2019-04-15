@@ -18,40 +18,68 @@ content.onkeydown = function (event) {
 
   if (event.keyCode == 37) {
     console.log('left');
-    // removed de focus van huidige focus element
-    document.getElementById(event.target.id).blur()
-    console.log(document.getElementById(event.target.id).children);
-
-    // haalt id op van huidige focus en split deze in losse letters
-    var currentfocus = event.target.id.split('');
-
-    // zorgt ervoor dat element 1 terugtelt 
-    currentfocus.splice(currentfocus.length - 1, 1, +currentfocus[currentfocus.length - 1] - 1);
-
-    // maakt hier het id aan van toekomstig nieuwe focus element
-    var newfocus = currentfocus.join('');
-
-    // voegt de focus toe aan nieuwe element
-    document.getElementById(newfocus).focus()
+    if (hasParent === false) {
+      console.log('is false');
+      document.getElementById(id).blur()
+      var split = id.replace(rx, (...arg) => {
+        console.log(arg);
+        var idPlus = Number(arg[3]) - 1;
+        return `${arg[1] + arg[2] + '_' + idPlus}`
+      });
+      console.log(split);
+      document.getElementById(split).focus();
+    }
+    if (hasParent === true) {
+      console.log('is false');
+      document.getElementById(id).blur()
+      var split = id.replace(rx, (...arg) => {
+        console.log(arg);
+        var idPlus = Number(arg[4]) - 1;
+        return `${arg[1] + arg[2] + '_' + arg[3] + '-' + idPlus}`
+      });
+      console.log(split);
+      try {
+        document.getElementById(split).focus();
+      } catch (e) {
+        if (e instanceof TypeError) {
+          console.log('error');
+          split = parentId;
+        }
+      }
+      document.getElementById(split).focus();
+    }
   }
 
   ////////////
   else if (event.keyCode == 39) {
     console.log('right');
-    // removed de focus van huidige focus element
-    document.getElementById(event.target.id).blur()
+    if (hasParent === false) {
+      console.log('is false');
+      document.getElementById(id).blur()
+      var split = id.replace(rx, (...arg) => {
+        var idPlus = Number(arg[3]) + 1;
+        return `${arg[1] + arg[2] + '_' + idPlus}`
+      });
+      document.getElementById(split).focus();
+    }
+    if (hasParent === true) {
+      console.log('is false');
+      document.getElementById(id).blur()
+      var split = id.replace(rx, (...arg) => {
+        var idPlus = Number(arg[4]) + 1;
+        return `${arg[1] + arg[2] + '_' + arg[3] + '-' + idPlus}`
+      });
+      try {
+        document.getElementById(split).focus();
+      } catch (e) {
+        if (e instanceof TypeError) {
+          console.log('error');
+          split = parentId;
+        }
+      }
+      document.getElementById(split).focus();
+    }
 
-    // haalt id op van huidige focus en split deze in losse letters
-    var currentfocus = event.target.id.split('');
-
-    // zorgt ervoor dat element 1 bijtelt 
-    currentfocus.splice(currentfocus.length - 1, 1, +currentfocus[currentfocus.length - 1] + 1);
-
-    // maakt hier het id aan van toekomstig nieuwe focus element
-    var newfocus = currentfocus.join('');
-
-    // voegt de focus toe aan nieuwe element
-    document.getElementById(newfocus).focus()
   }
   ////////////
 
@@ -65,7 +93,6 @@ content.onkeydown = function (event) {
         var idPlus = Number(arg[2]) - 1;
         return `${arg[1] + idPlus + '_' + arg[3]}`
       });
-      console.log(split);
       document.getElementById(split).focus();
     }
 
@@ -73,11 +100,9 @@ content.onkeydown = function (event) {
       console.log('is false');
       document.getElementById(id).blur()
       var split = id.replace(rx, (...arg) => {
-        console.log(arg);
         var idPlus = Number(arg[4]) - 1;
         return `${arg[1] + arg[2] + '_' + arg[3] + '-' + idPlus}`
       });
-      console.log(split);
       try {
         document.getElementById(split).focus();
       } catch (e) {
@@ -109,7 +134,6 @@ content.onkeydown = function (event) {
         return `${arg[1] + arg[2] + '_' + arg[3] + '-' + idPlus}`
       });
     }
-
     try {
       document.getElementById(split).focus();
     } catch (e) {
@@ -120,13 +144,12 @@ content.onkeydown = function (event) {
     }
     document.getElementById(split).focus();
   }
-  function check(x) {
-    var parentId = x.parentElement.id
-    var hasParent = (parentId === 'content') ? false : true;
-    var id = x.id
-    return [id, hasParent, parentId]
-  }
+
 }
 
-
-
+function check(x) {
+  var parentId = x.parentElement.id
+  var hasParent = (parentId === 'content') ? false : true;
+  var id = x.id
+  return [id, hasParent, parentId]
+}
