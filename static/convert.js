@@ -6,14 +6,15 @@ var items = content.children
 
 
 content.onkeydown = function (event) {
+  console.log(' ');
   // log aantal cellen in parent
   let values = check(document.activeElement)
-  console.log(values);
+  // console.log(values);
 
   var parentId = values[2];
   var hasParent = values[1];
   var id = values[0];
-  var rx = /(\w*\d*)(\d)_(\d)-*(\d*)/g
+  var rx = /(\w*\d*)(\d)_(\d*)-*(\d*)/g
 
 
   if (event.keyCode == 37) {
@@ -44,9 +45,10 @@ content.onkeydown = function (event) {
         if (e instanceof TypeError) {
           console.log('error');
           split = parentId;
+          document.getElementById(split).focus();
         }
       }
-      document.getElementById(split).focus();
+      // document.getElementById(split).focus();
     }
   }
 
@@ -60,6 +62,7 @@ content.onkeydown = function (event) {
         var idPlus = Number(arg[3]) + 1;
         return `${arg[1] + arg[2] + '_' + idPlus}`
       });
+      console.log(split);
       document.getElementById(split).focus();
     }
     if (hasParent === true) {
@@ -75,9 +78,11 @@ content.onkeydown = function (event) {
         if (e instanceof TypeError) {
           console.log('error');
           split = parentId;
+          console.log(split);
+          document.getElementById(split).focus();
         }
       }
-      document.getElementById(split).focus();
+      // document.getElementById(split).focus();
     }
 
   }
@@ -93,6 +98,7 @@ content.onkeydown = function (event) {
         var idPlus = Number(arg[2]) - 1;
         return `${arg[1] + idPlus + '_' + arg[3]}`
       });
+      console.log(split);
       document.getElementById(split).focus();
     }
 
@@ -100,19 +106,22 @@ content.onkeydown = function (event) {
       console.log('is false');
       document.getElementById(id).blur()
       var split = id.replace(rx, (...arg) => {
-        console.log(arg);
+        // console.log(arg);
         var idPlus = Number(arg[3]) - 1;
         return `${arg[1] + arg[2] + '_' + idPlus + '-' + arg[4]}`
       });
+      console.log(split);
       try {
         document.getElementById(split).focus();
       } catch (e) {
         if (e instanceof TypeError) {
           console.log('error');
           split = parentId;
+          // console.log(split);
+          document.getElementById(split).focus();
         }
       }
-      document.getElementById(split).focus();
+      // document.getElementById(split).focus();
     }
   }
 
@@ -124,6 +133,7 @@ content.onkeydown = function (event) {
         var idPlus = Number(arg[2]) + 1;
         return `${arg[1] + idPlus + '_' + arg[3]}`
       });
+      console.log(split);
       document.getElementById(split).focus();
     }
 
@@ -142,15 +152,23 @@ content.onkeydown = function (event) {
       if (e instanceof TypeError) {
         console.log('error');
         split = parentId;
+        document.getElementById(split).focus();
       }
     }
-    document.getElementById(split).focus();
+    // document.getElementById(split).focus();
   }
 
 }
 
 function check(x) {
+  var parent = x.parentElement
   var parentId = x.parentElement.id
+  if (parentId === "") {
+    parentId = x.parentElement.parentElement.id
+  }
+  if (parentId === "") {
+    parentId = x.parentElement.parentElement.parentElement.id
+  }
   var hasParent = (parentId === 'content') ? false : true;
   var id = x.id
   return [id, hasParent, parentId]
