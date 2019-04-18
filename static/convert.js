@@ -10,7 +10,7 @@
   const grabHandle = $("a");
   const rows = $("li[aria-grabbed]");
 
-  return grabHandle.on("keyup", function (event) {
+  return grabHandle.on("keydown", function (event) {
     const $this = $(this);
     const $row = $this.parent();
 
