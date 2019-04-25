@@ -107,6 +107,8 @@ h1 {
 .plus {
     font-size: 30px;
     padding-left: 10px;
+    margin: 0;
+    padding-right: 2rem;
 }
 
 tbody {
@@ -188,4 +190,58 @@ table {
 #c01_1-1 p {
     text-align: left;
     padding-left: 1rem;
+}
+
+li a {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr auto;
+    align-items: center;
+}
+
+.true a:focus {
+    outline-color: limegreen;
+}
+
+li a p {
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+tr {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr 90px;
+    align-items: center;
+}
+
+#c02_1-1 {
+    background: none;
+    display: block;
+}
+
+.header h2,
+.header h1,
+.header p,
+.header section {
+    padding-left: 1rem;
+}
+
+.header section {
+    padding-right: 1rem;
+}
+
+#test {
+    min-width: 50px;
+    min-height: 50px;
+    background-color: red;
+}
+
+#test:focus {
+    min-width: 50px;
+    min-height: 50px;
+    background-color: blue;
 }

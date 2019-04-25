@@ -7,7 +7,6 @@
 
 <body>
   <% include ../partials/nav %>
-
   <section id="content">
     <article id="p01_1" tabindex="1">
       <button tabindex="0" id="c01_1-1" autofocus>
@@ -86,7 +85,9 @@
         <h2>AFSPEELLIJST</h2>
         <h1>Metal</h1>
         <p>Aangemaakt door <strong>1151976550</strong>. 10 nummers, 46 min</p>
-        <section tabindex="0" id="c02_1-1"><a href="" class="play">AFSPELEN</a></section>
+        <section tabindex="0" id="c02_1-1">
+          <p class="play">AFSPELEN</p>
+        </section>
       </section>
       <table style="width:100%" cellspacing="0" cellpadding="0">
         <tr>
@@ -109,149 +110,155 @@
                 d="M12.1,1.8V0h-1v1.8H3.2V0h-1v1.8H0v13.1h14.2V1.8H12.1z M13.2,2.8v2.1H1V2.8H13.2z M1,13.9v-8h12.2v8H1z" />
             </svg></th>
         </tr>
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_2-1">
-          <th>
-            <p class="plus">+</p>
-          </th>
-          <th>
-            <p><strong>Alone</strong></p>
-          </th>
-          <th>
-            <p><strong>A Pale Horse Named Death</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_3-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>Blood and Thunder</strong></p>
-          </th>
-          <th>
-            <p><strong>Mastodon</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-        </tr>
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_4-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>Dragula</strong></p>
-          </th>
-          <th>
-            <p><strong>Rob Zombie</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_5-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>Halo</strong></p>
-          </th>
-          <th>
-            <p><strong>Soil</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_6-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>Beyond Oblivion</strong></p>
-          </th>
-          <th>
-            <p><strong>Trivium</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_7-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>Stranded</strong></p>
-          </th>
-          <th>
-            <p><strong>Gojira</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_8-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>1000hp</strong></p>
-          </th>
-          <th>
-            <p><strong>Godsmack</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_9-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>Redneck Stomp</strong></p>
-          </th>
-          <th>
-            <p><strong>Obituary</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_10-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>Bleed</strong></p>
-          </th>
-          <th>
-            <p><strong>Meshuggah</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-
-
-        <tr aria-grabbed="false" aria-dropeffect="move" tabindex="0" id="c02_11-1">
-          <th>
-            <p class="plus">+</p>
-          <th>
-            <p><strong>Executioner's Tax (Swing of the Axe)</strong></p>
-          </th>
-          <th>
-            <p><strong>Power Trip</strong></p>
-          </th>
-          <th>
-            <p>3 uur geleden</p>
-          </th>
-        </tr>
-        </tr>
       </table>
+
+      <ul>
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" >
+
+            <p class="plus">+</p>
+
+            <p><strong>Die Alone</strong></p>
+
+            <p><strong>A Pale Horse Named Death</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_3-1">
+
+            <p class="plus">+</p>
+
+            <p><strong>Blood and Thunder</strong></p>
+
+            <p><strong>Mastodon</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_4-1">
+
+            <p class=" plus">+</p>
+
+            <p><strong>Dragula</strong></p>
+
+            <p><strong>Rob Zombie</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_5-1">
+
+            <p class=" plus">+</p>
+
+            <p><strong>Halo</strong></p>
+
+            <p><strong>Soil</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_6-1">
+
+            <p class=" plus">+</p>
+
+            <p><strong>Beyond Oblivion</strong></p>
+
+            <p><strong>Trivium</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_7-1">
+
+            <p class=" plus">+</p>
+
+            <p><strong>Stranded</strong></p>
+
+            <p><strong>Gojira</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_8-1">
+
+            <p class=" plus">+</p>
+
+            <p><strong>1000hp</strong></p>
+
+            <p><strong>Godsmack</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_9-1">
+
+            <p class=" plus">+</p>
+
+            <p><strong>Redneck Stomp</strong></p>
+
+            <p><strong>Obituary</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_10-1">
+
+            <p class=" plus">+</p>
+
+            <p><strong>Bleed</strong></p>
+
+            <p><strong>Meshuggah</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+
+        <li aria-grabbed="false" aria-dropeffect="move">
+          <a class="drag" href="" id="c02_11-1">
+
+            <p class=" plus">+</p>
+
+            <p><strong>Executioner's Tax (Swing of the Axe)</strong></p>
+
+            <p><strong>Power Trip</strong></p>
+
+            <p>3 uur geleden</p>
+
+          </a></li>
+
+      </ul>
+
+
     </article>
-    <article id="p01_3" tabindex="0"></article>
+    <article id="p01_3"></article>
   </section>
+
 
 
   <% include ../partials/footer %>
