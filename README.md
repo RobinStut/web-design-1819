@@ -1,4 +1,5 @@
 prototype: [https://wd2stut.herokuapp.com/](https://wd2stut.herokuapp.com/)
+
 bekijk de code op: [branch week2](https://github.com/RobinStut/web-design-1819/tree/week2)
 
 # Web Design @cmda-minor-web 1819
